@@ -1,0 +1,1 @@
+-- Master SportsHub database schema.

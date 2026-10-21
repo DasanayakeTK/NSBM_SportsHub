@@ -1,2 +1,0 @@
-<?php
-// Sports club management.

@@ -1,0 +1,2 @@
+<?php
+// Facility reservation processing.

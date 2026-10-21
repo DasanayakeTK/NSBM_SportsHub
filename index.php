@@ -1,2 +1,3 @@
 <?php
-// SportsHub landing and login page.
+header('Location: modules/auth_profiles/login_view.php');
+exit;

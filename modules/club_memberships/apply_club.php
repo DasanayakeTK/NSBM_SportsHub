@@ -1,6 +1,4 @@
 <?php
-// Student UI for club membership requests.
-<?php
 // Student page: apply to a club and see the status of my applications.
 require_once '../../core/auth_check.php';
 

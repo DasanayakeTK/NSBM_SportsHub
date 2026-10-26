@@ -1,6 +1,4 @@
 <?php
-// Admin UI for reviewing pending membership requests.
-<?php
 // Admin page: approve or reject pending club membership requests.
 require_once '../../core/auth_check.php';
 

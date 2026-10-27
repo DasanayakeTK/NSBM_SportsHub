@@ -1,2 +1,0 @@
-<?php
-// Public leaderboard UI.

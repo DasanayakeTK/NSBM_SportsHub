@@ -1,4 +1,4 @@
-<?p<?php
+<?php
 // Backend for tournaments and fixtures. Admin only.
 // Tournament actions go back to manage_tournaments.php, fixture actions go back to manage_fixtures.php.
 require_once '../../core/auth_check.php';
@@ -147,5 +147,4 @@ if ($request_method == "GET" && isset($_GET['action']) && $_GET['action'] == "de
 
 // anything else goes back to the tournaments page
 header("Location: manage_tournaments.php");
-exit();hp
-// Tournament match CRUD processing.
+exit();

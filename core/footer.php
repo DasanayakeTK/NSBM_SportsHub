@@ -23,5 +23,18 @@
         });
     </script>
 
+    <!-- Link external JavaScript -->
+    <script src="<?php echo $website_base_url; ?>assets/js/main.js"></script>
+    
+    <!-- Existing Loader Script -->
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('page-loader');
+            if(loader) {
+                loader.style.opacity = '0';
+                setTimeout(function() { loader.style.display = 'none'; }, 500);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -528,3 +528,14 @@ a:hover {
 .logo-img:hover {
     transform: scale(1.05); /* Adds a subtle zoom effect when hovering */
 }
+
+/* ---------- Live Form Validation States ---------- */
+.form-group input.is-valid {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 3px rgba(132, 196, 65, 0.25);
+}
+
+.form-group input.is-invalid {
+    border-color: var(--error-red);
+    box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.25);
+}

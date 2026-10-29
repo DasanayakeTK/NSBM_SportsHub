@@ -30,4 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
             input.classList.add('is-invalid');
         }
     }
+
+    // Toast Notification Logic
+    const messageBoxes = document.querySelectorAll('.message-box');
+    
+    messageBoxes.forEach(box => {
+        // Add a class to trigger the CSS animation
+        box.classList.add('show-toast');
+        
+        // Remove the toast after 3.5 seconds
+        setTimeout(() => {
+            box.classList.remove('show-toast');
+            box.classList.add('hide-toast');
+            
+            // Remove from DOM after the fade-out animation completes
+            setTimeout(() => { box.remove(); }, 500);
+        }, 3500);
+    });
 });

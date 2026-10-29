@@ -300,48 +300,45 @@ a:hover {
     border-bottom: none;
 }
 
-/* ---------- Message boxes (success / error) ---------- */
+/* ---------- Message boxes (Floating Toasts) ---------- */
 .message-box {
-    padding: 0.8rem 1rem;
-    border-radius: 6px;
-    border-left: 5px solid;
-    margin: 1rem 0;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border-left: 6px solid;
     font-weight: 600;
+    z-index: 10000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateX(50px);
+    pointer-events: none; /* Prevents user from clicking it accidentally */
+}
+
+/* Animation classes controlled by JS */
+.message-box.show-toast {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.message-box.hide-toast {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .message-success {
-    background-color: #e3f5d6;
+    background-color: var(--white);
     border-color: var(--green-forest);
     color: var(--green-forest);
 }
 
 .message-error {
-    background-color: #fdeaea;
+    background-color: var(--white);
     border-color: var(--error-red);
     color: var(--error-red);
-}
-
-/* ---------- Status colours ---------- */
-.status-pending {
-    color: var(--warning-amber);
-    font-weight: 700;
-}
-
-.status-approved,
-.status-completed {
-    color: var(--green-forest);
-    font-weight: 700;
-}
-
-.status-rejected,
-.status-cancelled {
-    color: var(--error-red);
-    font-weight: 700;
-}
-
-.status-scheduled {
-    color: var(--info-blue);
-    font-weight: 700;
 }
 
 /* ---------- Club cards (browse clubs page) ---------- */

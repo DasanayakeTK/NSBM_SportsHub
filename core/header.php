@@ -59,7 +59,10 @@ if ($user_role == "admin") {
 <div id="page-loader"><video src="<?php echo $website_base_url; ?>assets/videos/loader.mp4" autoplay loop muted playsinline class="loader-video"></video></div>
 
     <header class="site-header">
-        <a class="site-logo" href="<?php echo $website_base_url; ?>index.php">NSBM SportsHub</a>
+        
+        <a class="site-logo" href="<?php echo $website_base_url; ?>index.php">
+            <img src="<?php echo $website_base_url; ?>assets/images/logo.jpg" alt="NSBM SportsHub Logo" class="logo-img">
+        </a>
 
         <nav class="main-navigation">
             <ul>

@@ -512,3 +512,19 @@ a:hover {
     }
 }
 
+.site-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px; /* Adjust this value to fit your navbar perfectly */
+    width: auto;
+    border-radius: 4px; /* Optional: smooths the edges of the image */
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Adds a subtle zoom effect when hovering */
+}

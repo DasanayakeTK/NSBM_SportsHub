@@ -47,7 +47,7 @@ $fixtures_result = mysqli_query($database_connection, $get_fixtures_query);
 <section class="page-section">
     <h1>Manage Match Fixtures</h1>
 
-    <p><a href="manage_tournaments.php">Go to Manage Tournaments</a></p>
+    <p><a class="btn" href="manage_tournaments.php">Go to Manage Tournaments</a></p>
 
     <?php if ($fixture_message != ""): ?>
         <p class="message-box message-<?php echo htmlspecialchars($fixture_message_type); ?>">

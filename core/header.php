@@ -55,7 +55,7 @@ if ($user_role == "admin") {
     <!-- If JavaScript is turned off the loader would never hide, so hide it here -->
     <noscript><style>#page-loader { display: none; }</style></noscript>
 </head>
-<body>
+<body class="page-<?php echo htmlspecialchars(basename($_SERVER['SCRIPT_NAME'], '.php')); ?>">
 <div id="page-loader"><video src="<?php echo $website_base_url; ?>assets/videos/loader.mp4" autoplay loop muted playsinline class="loader-video"></video></div>
 
     <header class="site-header">

@@ -11,7 +11,6 @@ $clubs_result = mysqli_query($database_connection, $get_clubs_query);
 
 <section class="page-section">
     <h1>Sports Clubs</h1>
-    <p>Find a club that matches your interests.</p>
 
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] == "admin"): ?>
         <p><a class="btn" href="manage_clubs.php">Manage Clubs</a></p>

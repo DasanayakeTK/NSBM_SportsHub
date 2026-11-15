@@ -5,9 +5,12 @@
 
 /* ---------- Colour variables (change colours here only) ---------- */
 :root {
-    --green-light: #84c441;       /* main accent (NSBM light green) */
-    --green-soft: #eaf6df;        /* very light green for backgrounds */
-    --green-forest: #1f5c2e;      /* dark forest green for hover states */
+    --green-light: #97cd3b;
+    /* main accent (NSBM light green) */
+    --green-soft: #bff8a0;
+    /* very light green for backgrounds */
+    --green-forest: #118519;
+    /* dark forest green for hover states */
     --text-dark: #1d2b20;
     --text-muted: #5b6b5f;
     --border-color: #d6e4cb;
@@ -23,6 +26,7 @@
         opacity: 0;
         transform: translateY(24px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -48,7 +52,8 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 50%;              /* circular mask */
+    border-radius: 50%;
+    /* circular mask */
     background-color: var(--white);
     box-shadow: 0 8px 24px rgba(31, 92, 46, 0.25);
 }
@@ -66,11 +71,14 @@ body {
     background-color: #f7fbf3;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;               /* keeps the footer at the bottom on short pages */
+    min-height: 100vh;
+    /* keeps the footer at the bottom on short pages */
 }
 
-h1, h2, h3 {
-    color: var(--green-forest);
+h1,
+h2,
+h3 {
+    color: #073d85;
     line-height: 1.25;
 }
 
@@ -140,7 +148,8 @@ a:hover {
 
 /* ---------- Main content and footer ---------- */
 .page-content {
-    flex: 1;                         /* pushes the footer down */
+    flex: 1;
+    /* pushes the footer down */
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -240,7 +249,8 @@ a:hover {
     border: none;
     border-radius: 6px;
     background-color: var(--green-light);
-    color: var(--green-forest);      /* dark text so it is easy to read on light green */
+    color: var(--green-forest);
+    /* dark text so it is easy to read on light green */
     font-size: 1rem;
     font-weight: 700;
     font-family: inherit;
@@ -313,7 +323,8 @@ a:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     opacity: 0;
     transform: translateX(50px);
-    pointer-events: none; /* Prevents user from clicking it accidentally */
+    pointer-events: none;
+    /* Prevents user from clicking it accidentally */
 }
 
 /* Animation classes controlled by JS */
@@ -370,10 +381,17 @@ a:hover {
 
 /* ---------- Home page ---------- */
 .hero {
-    background: linear-gradient(135deg, var(--green-soft), var(--white));
+    background: url('../images/home-bg.jpg') center/cover no-repeat;
+    color: var(--white);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 2.5rem 1.5rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* keeps the text and buttons in the middle */
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -381,16 +399,45 @@ a:hover {
 .hero h1 {
     font-size: 2.2rem;
     margin-top: 0;
+    color: var(--white);
+    /* overrides the green heading colour */
 }
 
 .hero p {
     max-width: 640px;
     margin: 0 auto 1.25rem;
-    color: var(--text-muted);
+    color: var(--white);
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), -1px -1px 4px rgba(0, 0, 0, 0.9), 1px -1px 4px rgba(0, 0, 0, 0.9), -1px 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .hero .btn {
     margin: 0.25rem;
+}
+
+/* smaller banner for the other pages (put it at the top of a page) */
+.page-banner {
+    background: linear-gradient(rgba(132, 196, 65, 0.85), rgba(31, 92, 46, 0.9)), url('../images/sports-bg.jpg') center/cover no-repeat;
+    height: 200px;
+    border-radius: 12px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.page-banner h1,
+.page-banner h2 {
+    color: var(--white);
+    margin: 0;
+}
+
+.page-banner p {
+    margin: 0.4rem 0 0;
 }
 
 .dashboard-grid {
@@ -499,6 +546,7 @@ a:hover {
 
 /* ---------- Respect users who turn animations off ---------- */
 @media (prefers-reduced-motion: reduce) {
+
     .page-section,
     .form-card {
         animation: none;
@@ -516,14 +564,17 @@ a:hover {
 }
 
 .logo-img {
-    height: 50px; /* Adjust this value to fit your navbar perfectly */
+    height: 50px;
+    /* Adjust this value to fit your navbar perfectly */
     width: auto;
-    border-radius: 4px; /* Optional: smooths the edges of the image */
+    border-radius: 4px;
+    /* Optional: smooths the edges of the image */
     transition: transform 0.3s ease;
 }
 
 .logo-img:hover {
-    transform: scale(1.05); /* Adds a subtle zoom effect when hovering */
+    transform: scale(1.05);
+    /* Adds a subtle zoom effect when hovering */
 }
 
 /* ---------- Live Form Validation States ---------- */
@@ -535,4 +586,83 @@ a:hover {
 .form-group input.is-invalid {
     border-color: var(--error-red);
     box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.25);
+}
+
+/* ---------- Page-specific background images (not the home page) ----------
+   header.php adds the file name as a body class, for example login_view.php gives page-login_view.
+   The home page has no rule here, it only uses its .hero banner. */
+.page-login_view {
+    background: url('../images/login-bg.jpg') center/cover fixed;
+}
+
+/* ---------- Module page backgrounds ----------
+   Each module has its own image. The admin page and the student page of a module share one image.
+   (login_view keeps its own rule above, and the home page only uses its .hero banner.) */
+
+/* Clubs */
+.page-manage_clubs,
+.page-browse_clubs {
+    background: url('../images/bg-clubs.jpg') center/cover fixed;
+}
+
+/* Memberships */
+.page-approve_members,
+.page-apply_club {
+    background: url('../images/bg-memberships.jpg') center/cover fixed;
+}
+
+/* Schedules */
+.page-manage_schedules,
+.page-view_schedules {
+    background: url('../images/bg-schedules.jpg') center/cover fixed;
+}
+
+/* Tournaments */
+.page-manage_tournaments,
+.page-fixture_list {
+    background: url('../images/bg-tournaments.jpg') center/cover fixed;
+}
+
+/* Results */
+.page-manage_results,
+.page-completed_matches {
+    background: url('../images/bg-results.jpg') center/cover fixed;
+}
+
+/* Bookings */
+.page-manage_bookings,
+.page-book_facility {
+    background: url('../images/bg-bookings.jpg') center/cover fixed;
+}
+
+/* Equipment */
+.page-manage_inventory,
+.page-inventory_list {
+    background: url('../images/bg-equipment.jpg') center/cover fixed;
+}
+
+/* Profile */
+.page-profile {
+    background: url('../images/bg-profile.jpg') center/cover fixed;
+}
+
+/* Fixtures */
+.page-manage_fixtures {
+    background: url('../images/bg-fixtures.jpg') center/cover fixed;
+}
+
+/* ---------- Main page titles (banner style so they are easy to read over the background images) ----------
+   Only direct children are targeted (>), so smaller card titles like .club-card h2
+   and .dashboard-card h3 are not affected. */
+.page-content>h1,
+.page-content>h2:first-of-type,
+.page-section>h1,
+.page-section>h2:first-of-type {
+    background-color: #073d85;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

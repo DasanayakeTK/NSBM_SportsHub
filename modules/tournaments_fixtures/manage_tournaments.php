@@ -30,7 +30,7 @@ $tournaments_result = mysqli_query($database_connection, $get_tournaments_query)
 <section class="page-section">
     <h1>Manage Tournaments</h1>
 
-    <p><a href="manage_fixtures.php">Go to Manage Fixtures</a></p>
+    <p><a class="btn" href="manage_fixtures.php">Go to Manage Fixtures</a></p>
 
     <?php if ($tournament_message != ""): ?>
         <p class="message-box message-<?php echo htmlspecialchars($tournament_message_type); ?>">

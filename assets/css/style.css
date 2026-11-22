@@ -381,7 +381,7 @@ a:hover {
 
 /* ---------- Home page ---------- */
 .hero {
-    background: url('../images/home-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35)), url('../images/home-bg.jpg') center/cover no-repeat;
     color: var(--white);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -665,4 +665,10 @@ a:hover {
     display: inline-block;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Home */
+.page-index {
+    background: url('../images/bg-home-full.jpg') center/cover fixed;
 }

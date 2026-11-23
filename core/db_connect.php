@@ -2,11 +2,28 @@
 // db_connect.php - Connects the application to the MySQL database
 // Require this file at the top of any page that needs database access.
 
-// Database configuration (Update these if your XAMPP setup is different)
-$database_host     = "localhost";    
-$database_username = "root";         
-$database_password = "";             
-$database_name     = "sportshub_db"; 
+// Database configuration: automatically switches between local XAMPP and live server
+$current_host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost';
+if (
+    $current_host == 'localhost' ||
+    $current_host == '127.0.0.1' ||
+    strpos($current_host, 'localhost:') === 0 ||
+    strpos($current_host, '127.0.0.1:') === 0
+) {
+    // Local XAMPP credentials
+    $database_host     = "localhost";    
+    $database_username = "root";         
+    $database_password = "";             
+    $database_name     = "sportshub_db"; 
+    $website_base_url  = '/NSBM_SportsHub/';
+} else {
+    // Live server credentials (replace these placeholders on the live host after uploading)
+    $database_host     = 'LIVE_DB_HOST';
+    $database_username = 'LIVE_DB_USER';
+    $database_password = 'LIVE_DB_PASS';
+    $database_name     = 'LIVE_DB_NAME';
+    $website_base_url  = '/';
+}
 
 // Disable default mysqli exceptions to handle errors manually below
 mysqli_report(MYSQLI_REPORT_OFF);

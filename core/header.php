@@ -7,9 +7,19 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Base URL for links across different module folders
-// Update this if the project folder name changes
-$website_base_url = "/NSBM_SportsHub/";
+// Base URL for links across different module folders.
+// Automatically detects if we are on local XAMPP or a live web server.
+$current_host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost';
+if (
+    $current_host == 'localhost' ||
+    $current_host == '127.0.0.1' ||
+    strpos($current_host, 'localhost:') === 0 ||
+    strpos($current_host, '127.0.0.1:') === 0
+) {
+    $website_base_url = '/NSBM_SportsHub/';
+} else {
+    $website_base_url = '/';
+}
 
 // Fallback title if the current page doesn't define one
 if (!isset($page_title)) {

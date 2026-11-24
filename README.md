@@ -6,7 +6,7 @@ A full-stack web application developed for the **Web and Mobile Application Deve
 
 ## 🔗 Project Links
 
-- **Live Hosted Application:** http://nsbmsportshub.infinityfree.io/
+- **Live Hosted Application:** https://nsbmsportshub.infinityfree.io/
 - **Video Demonstration (YouTube):** [TBD]
 - **GitHub Repository:** https://github.com/DasanayakeTK/NSBM_SportsHub
 
